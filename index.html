@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Presentation Interview Prompt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #FFFFFF;
+            background: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #000000;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(58, 134, 255, 0.3);
+            overflow: hidden;
+            border: 1px solid #A259FF;
+        }
+
+        .header {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 30px;
+            text-align: center;
+            border: 2px solid #A259FF;
+            border-radius: 15px;
+            margin: 10px;
+            position: relative;
+            padding-top: 70px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            width: 200px;
+            height: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: #B0B0B0;
+            margin-bottom: 25px;
+        }
+
+        .copy-section {
+            padding: 0 30px 30px 30px;
+            background: #000000;
+            text-align: center;
+            margin-top: -15px;
+        }
+
+        .copy-btn {
+            background: linear-gradient(45deg, #3A86FF, #3A86FF);
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(58, 134, 255, 0.4);
+            margin-right: 15px;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(58, 134, 255, 0.6);
+            background: linear-gradient(45deg, #4A96FF, #3A86FF);
+        }
+
+        .select-btn {
+            background: linear-gradient(45deg, #A259FF, #A259FF);
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(162, 89, 255, 0.4);
+        }
+
+        .select-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(162, 89, 255, 0.6);
+            background: linear-gradient(45deg, #B269FF, #A259FF);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feedback.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .feedback.show {
+            opacity: 1;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .prompt-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #3498db;
+            white-space: pre-wrap;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .framework-highlight {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #2196f3;
+        }
+
+        .example-box {
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid #4caf50;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .copy-btn {
+                padding: 12px 20px;
+                font-size: 1rem;
+                display: block;
+                width: 100%;
+            }
+            
+            .copy-section {
+                padding: 20px;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- Black background -->
+              <rect x="0" y="0" width="400" height="120" fill="#000000"/>
+              
+              <defs>
+                <!-- Dynamic briefcase gradient -->
+                <linearGradient id="briefcaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#3A86FF;stop-opacity:1" />
+                  <stop offset="50%" style="stop-color:#4F9AFF;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#1E3A8A;stop-opacity:1" />
+                </linearGradient>
+                
+                <!-- Neon glow gradient -->
+                <radialGradient id="glowGradient" cx="50%" cy="50%" r="60%">
+                  <stop offset="0%" style="stop-color:#A259FF;stop-opacity:0.6" />
+                  <stop offset="70%" style="stop-color:#3A86FF;stop-opacity:0.3" />
+                  <stop offset="100%" style="stop-color:#A259FF;stop-opacity:0.1" />
+                </radialGradient>
+              </defs>
+              
+              <!-- Background glow circles -->
+              <circle cx="60" cy="60" r="45" fill="url(#glowGradient)" opacity="0.4"/>
+              <circle cx="300" cy="30" r="20" fill="#A259FF" opacity="0.1"/>
+              <circle cx="350" cy="90" r="15" fill="#3A86FF" opacity="0.15"/>
+              
+              <!-- Modern briefcase with 3D effect -->
+              <g>
+                <!-- Main briefcase body -->
+                <rect x="32" y="42" width="56" height="36" rx="6" ry="6" fill="url(#briefcaseGradient)"/>
+                
+                <!-- Briefcase shadow/depth -->
+                <rect x="34" y="44" width="52" height="32" rx="4" ry="4" fill="#1E3A8A" opacity="0.3"/>
+                
+                <!-- Handle with glow -->
+                <rect x="54" y="36" width="12" height="10" rx="6" ry="5" fill="none" stroke="#3A86FF" stroke-width="3"/>
+                <rect x="54" y="36" width="12" height="10" rx="6" ry="5" fill="none" stroke="#A259FF" stroke-width="1" opacity="0.6"/>
+                
+                <!-- Modern lock indicator -->
+                <circle cx="60" cy="60" r="3" fill="#ffffff" opacity="0.9"/>
+              </g>
+              
+              <!-- Integrated prompt symbols with animation feel -->
+              <g>
+                <!-- Main prompt symbol -->
+                <path d="M 42 54 L 50 60 L 42 66" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                
+                <!-- Secondary prompt with electric effect -->
+                <path d="M 70 54 L 78 60 L 70 66" fill="none" stroke="#A259FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              
+              <!-- Modern typography with glow -->
+              <g>
+                <!-- "JOB SEARCH" in white -->
+                <text x="110" y="42" font-family="'Inter', 'SF Pro Display', system-ui, sans-serif" font-size="26" font-weight="700" fill="#ffffff" letter-spacing="0px">JOB SEARCH</text>
+                
+                <!-- "Prompts" in Electric Blue -->
+                <text x="110" y="72" font-family="'Inter', 'SF Pro Display', system-ui, sans-serif" font-size="28" font-weight="800" fill="#3A86FF" letter-spacing="0px">Prompts</text>
+              </g>
+              
+              <!-- Dynamic accent elements -->
+              <rect x="110" y="78" width="100" height="3" fill="#A259FF" rx="1.5" opacity="0.8"/>
+              <rect x="110" y="82" width="60" height="1" fill="#3A86FF" rx="0.5" opacity="0.6"/>
+              
+              <!-- Floating particles for modern tech feel -->
+              <circle cx="320" cy="25" r="1.5" fill="#A259FF" opacity="0.8"/>
+              <circle cx="340" cy="35" r="1" fill="#3A86FF" opacity="0.6"/>
+              <circle cx="360" cy="45" r="1.2" fill="#ffffff" opacity="0.4"/>
+              <circle cx="330" cy="95" r="1" fill="#A259FF" opacity="0.7"/>
+              <circle cx="370" cy="85" r="0.8" fill="#3A86FF" opacity="0.5"/>
+            </svg>
+            <h1>What Are Your Strengths & Weaknesses? Generator</h1>
+            <p>Frame your strengths and weaknesses strategically for every interview</p>
+            <button class="copy-btn" onclick="copyToClipboard()">📋 Copy Entire Prompt</button>
+            <div class="feedback" id="feedback"></div>
+        </div>
+        
+        <div class="content">
+            <div class="prompt-text" id="promptText">You are helping a candidate prepare for the interview question: "What are your strengths and weaknesses?" Follow these steps to generate tailored and well-structured responses based on the specific job posting.
+
+1. Explain the task to the candidate.
+
+2. Ask the candidate to insert the job posting details.
+
+3. Guide the candidate to structure their responses about strengths and weaknesses, ensuring alignment with the job requirements.
+
+Please provide the following information:
+
+Job Posting: [Insert job posting details here]
+
+---
+
+Once you have the job posting, follow these steps:
+
+**Step 1: Identify Relevant Strengths**
+- Identify 3-5 strengths that are most relevant to the job posting.
+- For each strength, provide a brief explanation of how it aligns with the job responsibilities.
+- Include specific examples or accomplishments that demonstrate the strength.
+
+**Example Structure for Strengths:**
+
+Strength 1: [Insert strength]
+- Explanation: [How the strength aligns with the job]
+- Example: [Specific example or accomplishment]
+
+Strength 2: [Insert strength]
+- Explanation: [How the strength aligns with the job]
+- Example: [Specific example or accomplishment]
+
+**Step 2: Identify Areas of Development (Weaknesses)**
+- Identify 1-2 areas of development that are honest but not critical to the job.
+- Explain how you are currently working on improving these areas.
+- Include specific examples of actions you are taking to address the weaknesses.
+
+**Example Structure for Weaknesses:**
+
+Weakness 1: [Insert weakness]
+- Explanation: [Briefly describe the weakness]
+- Improvement Example: [Specific example of what you are doing to improve]
+
+Weakness 2 (optional): [Insert weakness]
+- Explanation: [Briefly describe the weakness]
+- Improvement Example: [Specific example of what you are doing to improve]
+
+---
+
+You go first! Please provide the job posting so we can begin tailoring your answers. 
+
+<question>Are there specific strengths you would like to highlight for this role?</question>
+
+<question>Do you have any particular areas of development you are working on that could be framed positively for the interview?</question></div>
+        </div>
+        
+        <div class="footer">
+            Ready to use with ChatGPT, Claude, or any AI assistant
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const promptText = document.getElementById('promptText').textContent;
+            const feedback = document.getElementById('feedback');
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(promptText).then(() => {
+                    showFeedback('✅ Prompt copied to clipboard!', 'success');
+                }).catch(() => {
+                    fallbackCopy(promptText);
+                });
+            } else {
+                fallbackCopy(promptText);
+            }
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showFeedback('✅ Prompt copied to clipboard!', 'success');
+            } catch (err) {
+                showFeedback('❌ Copy failed. Please select and copy manually.', 'error');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        function showFeedback(message, type) {
+            const feedback = document.getElementById('feedback');
+            feedback.textContent = message;
+            feedback.className = `feedback ${type} show`;
+            
+            setTimeout(() => {
+                feedback.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Add keyboard shortcut for copy
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'C') {
+                e.preventDefault();
+                copyToClipboard();
+            }
+        });
+    </script>
+</body>
+</html>
